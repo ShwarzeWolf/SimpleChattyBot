@@ -41,10 +41,46 @@ public class SimpleBot {
         System.out.println("Your age is " + age + "; that's a good time to start programming!");
     }
 
+    public void countToNumber(){
+        System.out.println("Now I will prove to you that I can count to any number you want.");
+        Scanner scanner = new Scanner(System.in);
+
+        int lastNumber = scanner.nextInt();
+
+        for (int i = 0; i <= lastNumber; ++i){
+            System.out.println(i + "!");
+        }
+    }
+
+    public void test(){
+        System.out.println("Let's test your programming knowledge.");
+        System.out.println("Why do we use methods?");
+        System.out.println("1. To repeat a statement multiple times.\n" +
+                "2. To decompose a program into several small subroutines.\n" +
+                "3. To determine the execution time of a program.\n" +
+                "4. To interrupt the execution of a program.");
+
+        Scanner scanner = new Scanner(System.in);
+
+        int result = scanner.nextInt();
+
+        while (result != 2){
+            System.out.println("Please, try again.");
+            result = scanner.nextInt();
+        }
+    }
+
+    public void end(){
+        System.out.println("Congratulations, have a nice day!");
+    }
+
     public static void main(String[] args) {
         SimpleBot bot = new SimpleBot("Ivan");
         bot.introduce();
         bot.askName();
         bot.guessAge();
+        bot.countToNumber();
+        bot.test();
+        bot.end();
     }
 }
